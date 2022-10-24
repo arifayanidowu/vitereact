@@ -16,10 +16,7 @@ function App() {
     <div className="App">
       <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
         <button onClick={launchOnAndroidDevice}>Android Device</button>
-        <button
-          onClick={launchOnIosDevice}
-          style={{ backgroundColor: "brown" }}
-        >
+        <button onClick={launchOnIosDevice} style={{ backgroundColor: "pink" }}>
           iOS Device
         </button>
       </div>
