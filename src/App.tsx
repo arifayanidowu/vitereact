@@ -3,12 +3,12 @@ import "./App.css";
 function App() {
   const launchOnAndroidDevice = () => {
     const url =
-      "intent://viteweb.netlify.app//#Intent;scheme=com.seamless_hrms;package=com.seamless_hrms;end";
+      "#Intent;scheme=com.seamless_hrms;package=com.seamless_hrms;end";
     window.location.href = url;
   };
 
   const launchOnIosDevice = () => {
-    const url = "seamless_hrms://";
+    const url = "org.reactjs.native.example.Seamless-HRMS://";
     window.location.href = url;
   };
 
