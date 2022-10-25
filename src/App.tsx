@@ -1,27 +1,22 @@
 import "./App.css";
+import useOS from "./hooks/useOS";
 
 function App() {
-  const launchOnAndroidDevice = () => {
-    const url =
-      "intent://viteweb.netlify.app//#Intent;scheme=com.seamless_hrms;package=com.seamless_hrms;end";
-    window.location.href = url;
-  };
-
-  const launchOnIosDevice = () => {
-    const url = "org.reactjs.native.example.Seamless-HRMS://";
-    window.location.href = url;
-  };
+  const { isIphone, launchOnAndroidDevice, launchOnIosDevice } = useOS();
 
   return (
     <div className="App">
       <div style={{ display: "flex", gap: 10, flexWrap: "wrap" }}>
-        <button onClick={launchOnAndroidDevice}>Android Device</button>
-        <button
-          onClick={launchOnIosDevice}
-          style={{ backgroundColor: "brown" }}
-        >
-          iOS Device
-        </button>
+        {isIphone ? (
+          <button
+            onClick={launchOnIosDevice}
+            style={{ backgroundColor: "brown" }}
+          >
+            iOS Device
+          </button>
+        ) : (
+          <button onClick={launchOnAndroidDevice}>Android Device</button>
+        )}
       </div>
     </div>
   );
