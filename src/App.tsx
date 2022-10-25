@@ -10,7 +10,7 @@ function App() {
         {isIphone ? (
           <button
             onClick={launchOnIosDevice}
-            style={{ backgroundColor: "brown" }}
+            style={{ backgroundColor: "cyan" }}
           >
             iOS Device
           </button>
