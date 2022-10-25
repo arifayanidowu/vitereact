@@ -5,6 +5,8 @@ function App() {
   const { isIphone, isMobile, launchOnAndroidDevice, launchOnIosDevice } =
     useOS();
 
+  console.log(isMobile);
+
   return (
     <div className="App">
       {isMobile && (
@@ -12,7 +14,7 @@ function App() {
           {isIphone ? (
             <button
               onClick={launchOnIosDevice}
-              style={{ backgroundColor: "cyan" }}
+              style={{ backgroundColor: "pink" }}
             >
               iOS Device
             </button>
