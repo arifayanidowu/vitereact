@@ -3,6 +3,7 @@ import { useEffect, useState, useCallback } from "react";
 const useOS = () => {
   const [os, setOS] = useState("");
   const [isIphone, setIsIphone] = useState(false);
+  const [isMobile, setIsMobile] = useState(true);
 
   const launchOnAndroidDevice = useCallback(() => {
     const url =
@@ -28,10 +29,14 @@ const useOS = () => {
     if (os === "iPhone") {
       setIsIphone(true);
     }
+    if (!(os === "iPhone" || os === "Android")) {
+      setIsMobile(false);
+    }
   }, [os]);
 
   return {
     isIphone,
+    isMobile,
     launchOnAndroidDevice,
     launchOnIosDevice,
   };
